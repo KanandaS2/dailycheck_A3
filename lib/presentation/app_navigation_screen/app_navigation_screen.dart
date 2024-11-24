@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/app_export.dart';
+import '../../core/app_export.dart';
 
 class AppNavigationScreen extends StatelessWidget {
   const AppNavigationScreen({Key? key}) : super(key: key);
@@ -8,24 +8,26 @@ class AppNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFFFFFFFF),
+        backgroundColor: Color(0xFFFFFFFF),
         body: SizedBox(
           width: 375.h,
           child: Column(
             children: [
               Container(
-                decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
+                decoration: BoxDecoration(
+                  color: Color(0xFFFFFFFF),
+                ),
                 child: Column(
                   children: [
                     SizedBox(height: 10.h),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.h),
-                      child: const Text(
+                      child: Text(
                         "App Navigation",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF000000),
-                          fontSize: 20,
+                          fontSize: 20.fSize,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
                         ),
@@ -34,12 +36,12 @@ class AppNavigationScreen extends StatelessWidget {
                     SizedBox(height: 10.h),
                     Padding(
                       padding: EdgeInsets.only(left: 20.h),
-                      child: const Text(
+                      child: Text(
                         "Check your app's UI from the below demo screens of your app.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF888888),
-                          fontSize: 16,
+                          fontSize: 16.fSize,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
                         ),
@@ -49,7 +51,7 @@ class AppNavigationScreen extends StatelessWidget {
                     Divider(
                       height: 1.h,
                       thickness: 1.h,
-                      color: const Color(0xFF000000),
+                      color: Color(0xFF000000),
                     ),
                   ],
                 ),
@@ -57,7 +59,9 @@ class AppNavigationScreen extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
-                    decoration: const BoxDecoration(color: Color(0xFFFFFFFF)),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFFFFFF),
+                    ),
                     child: Column(
                       children: [
                         _buildScreenTitle(
@@ -69,8 +73,8 @@ class AppNavigationScreen extends StatelessWidget {
                         _buildScreenTitle(
                           context,
                           screenTitle: "conhecer",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.conhecerScreen),
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.conhecerScreen),
                         ),
                         _buildScreenTitle(
                           context,
@@ -81,8 +85,8 @@ class AppNavigationScreen extends StatelessWidget {
                         _buildScreenTitle(
                           context,
                           screenTitle: "cadastro",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.cadastroScreen),
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.cadastroScreen),
                         ),
                         _buildScreenTitle(
                           context,
@@ -92,27 +96,27 @@ class AppNavigationScreen extends StatelessWidget {
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "telaInicial",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.telainicialScreen),
+                          screenTitle: "TelaInicial",
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.telainicialScreen),
                         ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "tarefasExibicao",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.tarefasexibicaoScreen),
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.tarefasexibicaoScreen),
                         ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "cadastraTarefa",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.cadastratarefa),
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.cadastratarefaScreen),
                         ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "cadastraCategoria",
-                          onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.cadastracategoria,
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.cadastracategoriaScreen),
                         ),
                         _buildScreenTitle(
                           context,
@@ -132,31 +136,53 @@ class AppNavigationScreen extends StatelessWidget {
     );
   }
 
-  /// Common click event
-  void onTapScreenTitle(BuildContext context, String routeName) {
-    Navigator.pushNamed(context, routeName);
-  }
-
-  /// Helper to build screen title buttons
-  Widget _buildScreenTitle({
-    required BuildContext context,
+  /// Common widget
+  Widget _buildScreenTitle(
+    BuildContext context, {
     required String screenTitle,
-    required VoidCallback onTapScreenTitle,
+    Function? onTapScreenTitle,
   }) {
     return GestureDetector(
-      onTap: onTapScreenTitle,
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10.h),
-        child: Text(
-          screenTitle,
-          style: const TextStyle(
-            color: Color(0xFF000000),
-            fontSize: 18,
-            fontFamily: 'Roboto',
-            fontWeight: FontWeight.w400,
-          ),
+      onTap: () {
+        onTapScreenTitle?.call();
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(0xFFFFFFFF),
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 10.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.h),
+              child: Text(
+                screenTitle,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF000000),
+                  fontSize: 20.fSize,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(height: 10.h),
+            Divider(
+              height: 1.h,
+              thickness: 1.h,
+              color: Color(0xFF888888),
+            ),
+          ],
         ),
       ),
     );
+  }
+
+  /// Common click event
+  void onTapScreenTitle(
+    BuildContext context,
+    String routeName,
+  ) {
+    Navigator.pushNamed(context, routeName);
   }
 }

@@ -33,7 +33,7 @@ class AppRoutes {
     acessoScreen: (context) => AcessoScreen(),
     cadastroScreen: (context) => CadastroScreen(),
     loginScreen: (context) => LoginScreen(),
-    telainicialScreen: (context) => TelainicialScreen(),
+    telainicialScreen: (context) => InicioScreen(),
     tarefasexibicaoScreen: (context) => TarefasexibicaoScreen(),
     cadastratarefaScreen: (context) => CadastratarefasScreen(),
     cadastracategoriaScreen: (context) => CadastracategoriaScreen(),
