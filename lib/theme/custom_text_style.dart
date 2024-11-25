@@ -45,7 +45,7 @@ class CustomTextStyles {
   static TextStyle get titleMediumErrorContainer =>
       theme.textTheme.titleMedium!.copyWith(
         color: theme.colorScheme.errorContainer.withOpacity(1),
-        fontSize: 17.5fsize,
+        fontSize: 17.fsize,
       );
 
   static TextStyle get titleMediumGray800 =>
@@ -57,14 +57,14 @@ class CustomTextStyles {
   static TextStyle get titleMediumGray800Bold =>
       theme.textTheme.titleMedium!.copyWith(
         color: appTheme.gray800,
-        fontSize: 17.5fsize,
+        fontSize: 17.fsize,
         fontWeight: FontWeight.w700,
       );
 
   static TextStyle get titleMediumOnPrimaryContainer =>
       theme.textTheme.titleMedium!.copyWith(
         color: theme.colorScheme.onPrimaryContainer,
-        fontSize: 17.5fsize,
+        fontSize: 17.fsize,
         fontWeight: FontWeight.w900,
       );
 
@@ -77,14 +77,14 @@ class CustomTextStyles {
   static TextStyle get titleMediumOnPrimaryContainerBlack19 =>
       theme.textTheme.titleMedium!.copyWith(
         color: theme.colorScheme.onPrimaryContainer,
-        fontSize: 19.5size,
+        fontSize: 19.fsize,
         fontWeight: FontWeight.w900,
       );
 
   static TextStyle get titleSmallErrorContainer =>
       theme.textTheme.titleSmall!.copyWith(
         color: theme.colorScheme.errorContainer.withOpacity(1),
-        fontSize: 15.5size,
+        fontSize: 15.fsize,
       );
 
   static TextStyle get titleSmallErrorContainerMedium =>

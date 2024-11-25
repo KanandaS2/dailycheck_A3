@@ -109,7 +109,7 @@ class TextThemes {
         ),
         headlineLarge: TextStyle(
           color: colorScheme.primaryContainer,
-          fontSize: 32.5fsize,
+          fontSize: 32.fsize,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w800,
         ),
@@ -127,7 +127,7 @@ class TextThemes {
         ),
         titleLarge: TextStyle(
           color: colorScheme.onPrimaryContainer,
-          fontSize: 20.5fsize,
+          fontSize: 20.fsize,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w900,
         ),

@@ -13,7 +13,7 @@ class CustomBottomBar extends StatefulWidget {
   CustomBottomBarState createState() => CustomBottomBarState();
 }
 
-// ignore_for_file: must_be_immutable
+
 class CustomBottomBarState extends State<CustomBottomBar> {
   int selectedIndex = 0;
 
@@ -117,7 +117,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
   }
 }
 
-// ignore_for_file: must_be_immutable
+
 class BottomMenuModel {
   BottomMenuModel({
     required this.icon,

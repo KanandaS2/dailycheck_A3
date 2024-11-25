@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider.dart' as fs;
 import '../../core/app_export.dart';
+import '../../widgets/custom_buttom_bar.dart';
 import '../../widgets/custom_floating_button.dart';
-import 'widgets/tasklist_item_widget.dart';
+
 
 class TarefasExibicaoInitialPage extends StatefulWidget {
   const TarefasExibicaoInitialPage({Key? key}) : super(key: key);

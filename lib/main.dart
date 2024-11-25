@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return MediaQuery(
               data: MediaQuery.of(context).copyWith(
-                textScaleFactor: TextScaler.linear(1.0),
+                textScaler: TextScaler.linear(1.0),
               ),
               child: child!,
             );

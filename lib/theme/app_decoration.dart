@@ -14,13 +14,14 @@ class AppDecoration {
       );
 
   // Outline decorations
-  static BoxDecoration get outlineGray800 => BoxDecoration(
-        color: appTheme.blueGray5001,
+  static BoxDecoration get outlineGray => BoxDecoration(
+        color: appTheme.blueGray500,
         border: Border.all(
           color: appTheme.gray800,
           width: 5.h,
         ),
       );
+
   static BoxDecoration get outlineGray800 => BoxDecoration(
         color: appTheme.blueGray50,
         border: Border.all(
