@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
-import '../../widgets/custom_bottom_bar.dart';
+import '../../widgets/custom_buttom_bar.dart';
 import 'tarefasexibicao_initial_page.dart';
 
 // ignore_for_file: must_be_immutable

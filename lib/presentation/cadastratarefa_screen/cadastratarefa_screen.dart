@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../theme/custom_button_style.dart';
@@ -102,7 +104,7 @@ class CadastraTarefaScreen extends StatelessWidget {
         },
       ),
       centerTitle: true,
-      title: AppbarTitle(
+      title: AppBarTitle(
         text: "Adicione os Dados da sua Tarefa",
       ),
     );

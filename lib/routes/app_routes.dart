@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import '../presentation/acesso_screen/acesso_screen.dart';
 import '../presentation/app_navigation_screen/app_navigation_screen.dart';
@@ -11,7 +13,6 @@ import '../presentation/login_screen/login_screen.dart';
 import '../presentation/tarefasexibicao_screen/tarefasexibicao_screen.dart';
 import '../presentation/telainicial_screen/telainicial_screen.dart';
 
-// ignore_for_file: must_be_immutable
 class AppRoutes {
   static const String inicioScreen = '/inicio_screen';
   static const String conhecerScreen = '/conhecer_screen';
@@ -36,7 +37,7 @@ class AppRoutes {
     telainicialScreen: (context) => InicioScreen(),
     tarefasexibicaoScreen: (context) => TarefasExibicaoScreen(),
     cadastratarefaScreen: (context) => CadastraTarefaScreen(),
-    cadastracategoriaScreen: (context) => CadastraCategoriasScreen(),
+    cadastracategoriaScreen: (context) => CadastraCategoriaScreen(),
     configScreen: (context) => ConfigScreen(),
     appNavigationScreen: (context) => AppNavigationScreen(),
     initialRoute: (context) => InicioScreen(),
