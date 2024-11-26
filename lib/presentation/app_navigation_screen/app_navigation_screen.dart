@@ -27,7 +27,7 @@ class AppNavigationScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF000000),
-                          fontSize: 20.fSize,
+                          fontSize: 20.fsize,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
                         ),
@@ -41,7 +41,7 @@ class AppNavigationScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF888888),
-                          fontSize: 16.fSize,
+                          fontSize: 16.fsize,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w400,
                         ),
@@ -160,7 +160,7 @@ class AppNavigationScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0xFF000000),
-                  fontSize: 20.fSize,
+                  fontSize: 20.fsize,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
                 ),

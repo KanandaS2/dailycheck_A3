@@ -49,7 +49,7 @@ class CategoryListItemWidget extends StatelessWidget {
           style: CustomTextStyles.titleSmallErrorContainer,
         ),
         CustomImageView(
-          imagePath: ImageConstant.imgMoreVerticalPrimary,
+          imagePath: ImageConstant.imgMoreVerticalonprimary,
           height: 24.h,
           width: 26.h,
           margin: EdgeInsets.only(left: 16.h),

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/app_bar/appbar_leading_image.dart';
@@ -7,10 +8,10 @@ import '../../widgets/custom_buttom_bar.dart';
 import 'widgets/categorylist_item_widget.dart';
 
 // ignore_for_file: must_be_immutable
-class CadastraCategoriasScreen extends StatelessWidget {
-  CadastraCategoriasScreen({Key? key}) : super(key: key);
+class CadastraCategoriaScreen extends StatelessWidget {
+  CadastraCategoriaScreen({Key? key}) : super(key: key);
 
-  final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class CadastraCategoriasScreen extends StatelessWidget {
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.only(
+            left: 10.h,
             top: 38.h,
             right: 10.h,
           ),
@@ -32,47 +34,52 @@ class CadastraCategoriasScreen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: _buildBottomBar(context),
+        bottomNavigationBar: SizedBox(
+          width: double.maxFinite,
+          child: _buildBottomBar(context),
+        ),
       ),
     );
   }
 
-  /// Section: AppBar
+  /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
       leadingWidth: 34.h,
-      leading: AppbarLeadingImage(
+      leading: AppBarLeadingImage(
         imagePath: ImageConstant.imgArrowLeft,
         margin: EdgeInsets.only(left: 7.h),
-        onTap: () {
-          onTapArrowLeftOne(context);
-        },
+        onTap: () {},
       ),
-      title: AppbarTitle(
+      title: AppBarTitle(
         text: "Gerenciar suas Categorias",
         margin: EdgeInsets.only(left: 8.h),
       ),
     );
   }
 
-  /// Section: Category List
+  /// Section Widget
   Widget _buildCategoryList(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 4.h),
       child: ListView.separated(
         padding: EdgeInsets.zero,
-        physics: const NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        separatorBuilder: (context, index) => SizedBox(height: 10.h),
+        separatorBuilder: (context, index) {
+          return SizedBox(
+            height: 10.h,
+          );
+        },
         itemCount: 3,
         itemBuilder: (context, index) {
-          return const CategoryListItemWidget();
+          return CategoryListItemWidget();
         },
       ),
     );
   }
 
-  /// Section: Create Category Row
+  /// Section Widget
   Widget _buildCreateCategoryRow(BuildContext context) {
     return SizedBox(
       width: double.maxFinite,
@@ -87,7 +94,7 @@ class CadastraCategoriasScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 10.h),
             child: Text(
               "Criar nova categoria",
-              style: CustomTextStyles.titleMediumDeepPurple600,
+              style: CustomTextStyles.titleMediumDeeppurple600,
             ),
           ),
         ],
@@ -95,19 +102,22 @@ class CadastraCategoriasScreen extends StatelessWidget {
     );
   }
 
-  /// Section: Bottom Bar
+  /// Section Widget
   Widget _buildBottomBar(BuildContext context) {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {
-        Navigator.pushNamed(
-          navigatorKey.currentContext!,
-          getCurrentRoute(type),
-        );
-      },
+    return SizedBox(
+      width: double.maxFinite,
+      child: CustomBottomBar(
+        onChanged: (BottomBarEnum type) {
+          Navigator.pushNamed(
+            navigatorKey.currentContext!,
+            getCurrentRoute(type),
+          );
+        },
+      ),
     );
   }
 
-  /// Route Handler for Bottom Navigation
+  /// Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
       case BottomBarEnum.Tarefas:
@@ -123,8 +133,8 @@ class CadastraCategoriasScreen extends StatelessWidget {
     }
   }
 
-  /// Back Navigation Handler
-  void onTapArrowLeftOne(BuildContext context) {
+  /// Navigates back to the previous screen.
+  onTapArrowLeftOne(BuildContext context) {
     Navigator.pop(context);
   }
 }

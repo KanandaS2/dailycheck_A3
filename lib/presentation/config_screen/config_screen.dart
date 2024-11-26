@@ -1,9 +1,10 @@
+import 'package:daily_check/widgets/custom_buttom_bar.dart';
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/app_bar/appbar_leading_image.dart';
 import '../../widgets/app_bar/appbar_title.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
-import '../../widgets/custom_bottom_bar.dart';
+import '../../widgets/custom_buttom_bar.dart';
 
 // ignore_for_file: must_be_immutable
 class ConfigScreen extends StatelessWidget {
@@ -37,13 +38,13 @@ class ConfigScreen extends StatelessWidget {
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
       leadingWidth: 34.h,
-      leading: AppbarLeadingImage(
+      leading: AppBarLeadingImage(
         imagePath: ImageConstant.imgArrowLeft,
         margin: EdgeInsets.only(left: 12.h),
         onTap: () => onTapArrowLeftOne(context),
       ),
       centerTitle: true,
-      title: AppbarTitle(
+      title: AppBarTitle(
         text: "Configurações",
       ),
     );

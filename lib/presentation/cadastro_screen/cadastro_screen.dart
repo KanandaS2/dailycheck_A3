@@ -8,10 +8,10 @@ import '../../widgets/custom_text_form_field.dart';
 class CadastroScreen extends StatelessWidget {
   CadastroScreen({Key? key}) : super(key: key);
 
-  final TextEditingController nameInputController = TextEditingController();
-  final TextEditingController emailInputController = TextEditingController();
-  final TextEditingController passwordInputController = TextEditingController();
-  final TextEditingController confirmPasswordInputController = TextEditingController();
+  TextEditingController nameInputController = TextEditingController();
+  TextEditingController emailInputController = TextEditingController();
+  TextEditingController passwordInputController = TextEditingController();
+  TextEditingController confirmPasswordInputController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,40 +27,127 @@ class CadastroScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _buildProfileImage(),
-                  SizedBox(height: 18.h),
-                  _buildInputSection(
-                    context,
-                    title: "NOME",
-                    inputBuilder: _buildNameInput,
+                  Container(
+                    width: double.maxFinite,
+                    padding: EdgeInsets.symmetric(horizontal: 28.h),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 122.h,
+                          width: 136.h,
+                          padding: EdgeInsets.only(top: 16.h),
+                          decoration: BoxDecoration(
+                            color: appTheme.blueGray500,
+                            borderRadius: BorderRadiusStyle.circleBorder66,
+                            border: Border.all(
+                              color: appTheme.gray800,
+                              width: 5.h,
+                            ),
+                          ),
+                          child: Stack(
+                            alignment: Alignment.topCenter,
+                            children: [
+                              CustomImageView(
+                                imagePath: ImageConstant.imgDoUtilizador1,
+                                height: 70.h,
+                                width: 74.h,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 18.h),
+                        Container(
+                          width: double.maxFinite,
+                          margin: EdgeInsets.only(left: 4.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "NOME",
+                                style: CustomTextStyles.titleMediumBlack,
+                              ),
+                              _buildNameInput(context),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 18.h),
+                        Container(
+                          width: double.maxFinite,
+                          margin: EdgeInsets.only(right: 2.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "EMAIL",
+                                style: CustomTextStyles.titleMediumBlack,
+                              ),
+                              _buildEmailInput(context),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 24.h),
+                        Container(
+                          width: double.maxFinite,
+                          margin: EdgeInsets.only(right: 2.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "CONFIRME O EMAIL",
+                                style: CustomTextStyles.titleMediumBlack,
+                              ),
+                              SizedBox(height: 2.h),
+                              Container(
+                                height: 44.h,
+                                width: 300.h,
+                                decoration: BoxDecoration(
+                                  color: theme.colorScheme.onPrimaryContainer,
+                                  borderRadius: BorderRadius.circular(10.h),
+                                  border: Border.all(
+                                    color: appTheme.gray800,
+                                    width: 3.h,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20.h),
+                        Container(
+                          width: double.maxFinite,
+                          margin: EdgeInsets.only(right: 2.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "SENHA",
+                                style: CustomTextStyles.titleMediumBlack,
+                              ),
+                              _buildPasswordInput(context),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 26.h),
+                        Container(
+                          width: double.maxFinite,
+                          margin: EdgeInsets.only(right: 4.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "CONFIRME A SENHA",
+                                style: CustomTextStyles.titleMediumBlack,
+                              ),
+                              _buildConfirmPasswordInput(context),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 38.h),
+                        _buildContinueButton(context),
+                        SizedBox(height: 24.h),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 18.h),
-                  _buildInputSection(
-                    context,
-                    title: "EMAIL",
-                    inputBuilder: _buildEmailInput,
-                  ),
-                  SizedBox(height: 24.h),
-                  _buildInputSection(
-                    context,
-                    title: "CONFIRME O EMAIL",
-                    inputBuilder: _buildConfirmEmailInput,
-                  ),
-                  SizedBox(height: 20.h),
-                  _buildInputSection(
-                    context,
-                    title: "SENHA",
-                    inputBuilder: _buildPasswordInput,
-                  ),
-                  SizedBox(height: 26.h),
-                  _buildInputSection(
-                    context,
-                    title: "CONFIRME A SENHA",
-                    inputBuilder: _buildConfirmPasswordInput,
-                  ),
-                  SizedBox(height: 38.h),
-                  _buildContinueButton(context),
-                  SizedBox(height: 24.h),
                 ],
               ),
             ),
@@ -70,57 +157,7 @@ class CadastroScreen extends StatelessWidget {
     );
   }
 
-  /// Section: Profile Image
-  Widget _buildProfileImage() {
-    return Container(
-      height: 122.h,
-      width: 136.h,
-      padding: EdgeInsets.only(top: 16.h),
-      decoration: BoxDecoration(
-        color: appTheme.blueGray5001,
-        borderRadius: BorderRadiusStyle.circleBorder66,
-        border: Border.all(
-          color: appTheme.gray800,
-          width: 5.h,
-        ),
-      ),
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          CustomImageView(
-            imagePath: ImageConstant.imgOut11012dor1,
-            height: 70.h,
-            width: 74.h,
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// Section: Input Section
-  Widget _buildInputSection(
-    BuildContext context, {
-    required String title,
-    required Widget Function(BuildContext) inputBuilder,
-  }) {
-    return Container(
-      width: double.maxFinite,
-      margin: EdgeInsets.symmetric(horizontal: 4.h),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: CustomTextStyles.titleMediumBlack,
-          ),
-          SizedBox(height: 4.h),
-          inputBuilder(context),
-        ],
-      ),
-    );
-  }
-
-  /// Section: Name Input
+  /// Section Widget
   Widget _buildNameInput(BuildContext context) {
     return CustomTextFormField(
       controller: nameInputController,
@@ -128,7 +165,7 @@ class CadastroScreen extends StatelessWidget {
     );
   }
 
-  /// Section: Email Input
+  /// Section Widget
   Widget _buildEmailInput(BuildContext context) {
     return CustomTextFormField(
       controller: emailInputController,
@@ -136,23 +173,7 @@ class CadastroScreen extends StatelessWidget {
     );
   }
 
-  /// Section: Confirm Email Input
-  Widget _buildConfirmEmailInput(BuildContext context) {
-    return Container(
-      height: 44.h,
-      width: 300.h,
-      decoration: BoxDecoration(
-        color: appTheme.colorScheme.onPrimaryContainer,
-        borderRadius: BorderRadius.circular(10.h),
-        border: Border.all(
-          color: appTheme.gray800,
-          width: 3.h,
-        ),
-      ),
-    );
-  }
-
-  /// Section: Password Input
+  /// Section Widget
   Widget _buildPasswordInput(BuildContext context) {
     return CustomTextFormField(
       controller: passwordInputController,
@@ -160,7 +181,7 @@ class CadastroScreen extends StatelessWidget {
     );
   }
 
-  /// Section: Confirm Password Input
+  /// Section Widget
   Widget _buildConfirmPasswordInput(BuildContext context) {
     return CustomTextFormField(
       controller: confirmPasswordInputController,
@@ -169,12 +190,15 @@ class CadastroScreen extends StatelessWidget {
     );
   }
 
-  /// Section: Continue Button
+  /// Section Widget
   Widget _buildContinueButton(BuildContext context) {
     return CustomElevatedButton(
       height: 38.h,
       text: "Continuar",
-      margin: EdgeInsets.symmetric(horizontal: 46.h),
+      margin: EdgeInsets.only(
+        left: 46.h,
+        right: 56.h,
+      ),
       buttonTextStyle: CustomTextStyles.titleMediumOnPrimaryContainerBlack,
     );
   }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 
-/// ignore_for_file: must_be_immutable
+
 class CustomRadioButton extends StatelessWidget {
-  CustomRadioButton({
-    Key? key,
+  CustomRadioButton(
+    {Key? key,
     required this.onChange,
     this.decoration,
     this.alignment,
@@ -45,9 +45,8 @@ class CustomRadioButton extends StatelessWidget {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: buildRadioButtonWidget(),
-          )
-        : buildRadioButtonWidget();
+            child: buildRadioButtonWidget)
+        : buildRadioButtonWidget;
   }
 
   bool get isGradient => gradient != null;
@@ -101,7 +100,7 @@ class CustomRadioButton extends StatelessWidget {
         height: iconSize,
         width: iconSize,
         child: Radio<String>(
-          visualDensity: VisualDensity(
+          visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
           ),

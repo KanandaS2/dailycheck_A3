@@ -27,7 +27,7 @@ class TaskCategoryListItemWidget extends StatelessWidget {
         "Escola",
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.center,
-        style: CustomTextStyles.titleSmallErrorContainer1,
+        style: CustomTextStyles.titleSmallErrorContainer_1,
       ),
     );
   }
