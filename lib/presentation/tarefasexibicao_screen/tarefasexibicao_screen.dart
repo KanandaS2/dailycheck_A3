@@ -5,7 +5,7 @@ import 'tarefasexibicao_initial_page.dart';
 
 // ignore_for_file: must_be_immutable
 class TarefasExibicaoScreen extends StatelessWidget {
-  const TarefasExibicaoScreen({Key? key})
+  TarefasExibicaoScreen({Key? key})
       : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
@@ -18,8 +18,7 @@ class TarefasExibicaoScreen extends StatelessWidget {
           key: navigatorKey,
           initialRoute: AppRoutes.tarefasexibicaoInitialPage,
           onGenerateRoute: (routeSettings) => PageRouteBuilder(
-            pageBuilder: (ctx, ani, ani1) =>
-                getCurrentPage(routeSettings.name),
+            pageBuilder: (ctx, ani, ani1) => getCurrentPage(routeSettings.name!),
             transitionDuration: Duration(seconds: 0),
           ),
         ),

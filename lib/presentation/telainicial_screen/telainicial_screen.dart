@@ -1,6 +1,6 @@
 import 'package:daily_check/presentation/tarefasexibicao_screen/widgets/tasklist_item_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider.dart' as fs;
+// import 'package:flutter_svg_provider.dart' as fs;
 import '../../core/app_export.dart';
 import '../../widgets/custom_buttom_bar.dart';
 import '../../widgets/custom_floating_button.dart';

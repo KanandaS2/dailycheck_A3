@@ -6,7 +6,6 @@ import '../../widgets/app_bar/appbar_title.dart';
 import '../../widgets/app_bar/custom_app_bar.dart';
 import '../../widgets/custom_buttom_bar.dart';
 
-// ignore_for_file: must_be_immutable
 class ConfigScreen extends StatelessWidget {
   ConfigScreen({Key? key}) : super(key: key);
 
